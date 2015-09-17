@@ -14,35 +14,6 @@
           <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
       </configuration>
-      <facet type="Struts2" name="Struts 2">
-        <configuration>
-          <fileset id="s2fileset" name="My Fileset " removed="false">
-            <file>file://$MODULE_DIR$/src/main/resources/struts.xml</file>
-            <file>file://$MODULE_DIR$/src/main/resources/action.xml</file>
-          </fileset>
-          <propertiesKeys disabled="false" />
-        </configuration>
-      </facet>
-    </facet>
-    <facet type="hibernate" name="Hibernate">
-      <configuration>
-        <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" />
-        </datasource-map>
-        <naming-strategy-map />
-        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/java/hibernate.cfg.xml" />
-      </configuration>
-    </facet>
-    <facet type="jpa" name="JPA">
-      <configuration>
-        <setting name="validation-enabled" value="true" />
-        <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping>
-          <factory-entry name="MyJPA" />
-          <factory-entry name="NewPersistenceUnit" />
-        </datasource-mapping>
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
-      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
@@ -56,9 +27,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Hibernate 4.2.2-4.2.2" level="project" />
-    <orderEntry type="library" name="Hibernate 4.2.2-4.2.2" level="project" />
-    <orderEntry type="library" name="JPA 2.1-JPA 2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.struts:struts2-core:2.3.24" level="project" />
     <orderEntry type="library" name="Maven: org.apache.struts.xwork:xwork-core:2.3.24" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.2" level="project" />
