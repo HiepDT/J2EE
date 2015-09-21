@@ -44,6 +44,7 @@ public class Login extends ActionSupport {
                 return SUCCESS;
             }
         } catch (Exception e) {
+            LOG.error(e.toString());
             return null;
         }
         return null;

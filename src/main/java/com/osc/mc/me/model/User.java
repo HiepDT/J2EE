@@ -8,6 +8,12 @@ import javax.persistence.*;
 @EntityListeners(Listener.class)
 @Table(name = "user")
 public class User {
+    @GeneratedValue
+    @Id
+    private String id;
+    private String username;
+    private String password;
+
     @PrePersist
     void onPrePersist() {
         username = username + " (ppmod)";
@@ -36,12 +42,6 @@ public class User {
     @PostRemove
     void onPostRemove() {
     }
-
-    @GeneratedValue
-    @Id
-    private String id;
-    private String username;
-    private String password;
 
     public User(String username, String password) {
         this.username = username;

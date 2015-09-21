@@ -5,6 +5,17 @@
 
     <bean id="User" class="com.osc.mc.me.model.User"/>
 
+    <bean id="userType" class="com.osc.mc.me.model.UserTypes">
+        <property name="userTypes">
+            <list>
+                <value>Admin</value>
+                <value>User</value>
+                <value>Mod</value>
+                <value>Anonymous</value>
+            </list>
+        </property>
+    </bean>
+
     <bean id="LoginSpringAction" class="com.osc.mc.me.action.Login">
     </bean>
 

@@ -10,9 +10,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-/**
- * Created by HiepDT on 9/11/2015.
- */
 public class Register extends ActionSupport {
     private String username;
     private String password;

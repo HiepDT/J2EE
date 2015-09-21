@@ -9,6 +9,7 @@ CAI DCMMM
 <s:form action="Register">
     <s:textfield name="username"/>
     <s:password name="password" />
+    <s:select list="userType.userTypes"/>
     <s:submit/>
 </s:form>
 </body>
