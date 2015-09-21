@@ -2,6 +2,9 @@ package com.osc.mc.me.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.osc.mc.me.model.User;
+import org.apache.struts2.ServletActionContext;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -38,7 +41,16 @@ public class Register extends ActionSupport {
         EntityManager em = factory.createEntityManager();
         LOG.info("Username and password (before persisting) " + username + " " + password);
         em.getTransaction().begin();
-        em.persist(new User(username, password));
+
+        //Spring
+        WebApplicationContext context =
+                WebApplicationContextUtils.getRequiredWebApplicationContext(
+                        ServletActionContext.getServletContext()
+                );
+        User user = (User) context.getBean("User");
+        user.setUsername(username);
+        user.setPassword(password);
+        em.persist(user);
         em.getTransaction().commit();
         return SUCCESS;
 
