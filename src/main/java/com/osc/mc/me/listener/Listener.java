@@ -7,11 +7,11 @@ import javax.persistence.*;
 public class Listener {
     @PrePersist
     void onPrePersist(Object o) {
+        ((User) o).setDescription(((User) o).getDescription()+"onPrePersist: from entity listener\n");
     }
 
     @PostPersist
     void onPostPersist(Object o) {
-        ((User) o).setPassword(((User) o).getPassword() + " (xmod)");
     }
 
     @PostLoad

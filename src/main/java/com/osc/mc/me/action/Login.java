@@ -38,15 +38,12 @@ public class Login extends ActionSupport {
         Query q = em.createQuery("SELECT u FROM User u WHERE u.username = :login AND u.password = :pass");
         q.setParameter("login", username);
         q.setParameter("pass", password);
-        try {
-            User user = (User) q.getSingleResult();
-            if (username.equalsIgnoreCase(user.getUsername()) && password.equals(user.getPassword())) {
-                return SUCCESS;
-            }
-        } catch (Exception e) {
-            LOG.error(e.toString());
-            return null;
+
+        User user = (User) q.getSingleResult();
+        if (username.equalsIgnoreCase(user.getUsername()) && password.equals(user.getPassword())) {
+            return SUCCESS;
         }
+
         return null;
     }
 }

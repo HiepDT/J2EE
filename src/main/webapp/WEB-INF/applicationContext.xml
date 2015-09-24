@@ -3,9 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="User" class="com.osc.mc.me.model.User"/>
+    <bean id="User" class="com.osc.mc.me.model.User" init-method="init"/>
 
-    <bean id="userType" class="com.osc.mc.me.model.UserTypes">
+    <bean id="userType" class="com.osc.mc.me.model.UserTypes" >
         <property name="userTypes">
             <list>
                 <value>Admin</value>
@@ -14,6 +14,10 @@
                 <value>Anonymous</value>
             </list>
         </property>
+    </bean>
+
+    <bean id="gadget" class="com.osc.mc.me.model.Gadget">
+        <constructor-arg value="Whatever..."/>
     </bean>
 
     <bean id="LoginSpringAction" class="com.osc.mc.me.action.Login">

@@ -13,34 +13,19 @@ public class User {
     private String id;
     private String username;
     private String password;
+    @Basic(fetch = FetchType.LAZY)
+    private String company;
+    private String description;
 
-    @PrePersist
-    void onPrePersist() {
-        username = username + " (ppmod)";
+    // Init method
+    public void init() {
+        this.description = "";
+        this.company = "OSC";
     }
 
     @PostPersist
     void onPostPersist() {
-    }
-
-    @PostLoad
-    void onPostLoad() {
-    }
-
-    @PreUpdate
-    void onPreUpdate() {
-    }
-
-    @PostUpdate
-    void onPostUpdate() {
-    }
-
-    @PreRemove
-    void onPreRemove() {
-    }
-
-    @PostRemove
-    void onPostRemove() {
+        this.company+= " (postPersist)not very smart.";
     }
 
     public User(String username, String password) {
@@ -73,5 +58,27 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @PrePersist
+    void onPrePersist() {
+        this.description+="onPrePersist: from within the entity\n";
     }
 }
