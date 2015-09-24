@@ -123,10 +123,36 @@
             <version>2.3.24</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.osc.ejb.me</groupId>
+            <artifactId>EJB</artifactId>
+            <version>1.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-install-plugin</artifactId>-->
+                <!--<version>2.4</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>install</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>install-file</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<groupId>com.osc.ejb.me</groupId>-->
+                            <!--<artifactId>EJB</artifactId>-->
+                            <!--<version>1.0</version>-->
+                            <!--<packaging>jar</packaging>-->
+                            <!--<file>${project.basedir}/EJB/target/EJB-1.0.jar</file>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>

@@ -1,6 +1,6 @@
 package com.osc.mc.me.action;
 
-import com.opensymphony.xwork2.ActionSupport;
+import com.osc.ejb.me.bean.remote.UserSessionBeanRemote;
 import com.osc.mc.me.model.User;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.web.context.WebApplicationContext;
@@ -10,7 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class Register extends ActionSupport {
+public class Register extends JNDIInit {
     private String username;
     private String password;
     private static final String PERSISTENCE_UNIT_NAME = "MyJPA";
@@ -32,11 +32,21 @@ public class Register extends ActionSupport {
         this.password = password;
     }
 
-    @Override
     public String execute() throws Exception {
+        if (true) {
+            persistJPAWay();
+        } else {
+            UserSessionBeanRemote userSessionBeanRemote =
+                    (UserSessionBeanRemote)ctx.lookup("UserSessionBeanRemoteImpl/remote");
+        }
+        return "success";
+
+    }
+
+    private void persistJPAWay() {
         factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         EntityManager em = factory.createEntityManager();
-        LOG.info("Username and password (before persisting) " + username + " " + password);
+//        LOG.info("Username and password (before persisting) " + username + " " + password);
         em.getTransaction().begin();
 
         //Spring
@@ -49,7 +59,5 @@ public class Register extends ActionSupport {
         user.setPassword(password);
         em.persist(user);
         em.getTransaction().commit();
-        return SUCCESS;
-
     }
 }
