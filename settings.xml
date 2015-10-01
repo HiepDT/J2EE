@@ -6,12 +6,8 @@
         <profile>
             <repositories>
                 <repository>
-                    <id>maven</id>
-                    <url>https://repo.maven.apache.org/maven2/</url>
-                </repository>
-                <repository>
                     <id>google-drive-releases</id>
-                    <url>https://drive.google.com/folderview?id=0B-lmf4kAX3xCYUpfTEhLbFVGLVE&amp;usp=sharing</url>
+                    <url>file:${project.basedir}/EJB/repository/mvn-snapshots</url>
                     <releases>
                         <enabled>true</enabled>
                     </releases>
