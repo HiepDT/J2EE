@@ -1,5 +1,6 @@
 package com.osc.mc.me.model;
 
+
 public class Gadget {
     //DI
     String description;

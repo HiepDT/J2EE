@@ -1,24 +1,24 @@
 package com.osc.mc.me.action;
 
+import com.opensymphony.xwork2.util.logging.Logger;
+import com.opensymphony.xwork2.util.logging.LoggerFactory;
+
+import javax.annotation.Resource;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Properties;
 
-public class JNDIInit {
-    Properties props;
-    InitialContext ctx;
 
+public class JNDIInit {
+
+    @Resource(name = "JNDIProps")
+    private Properties JNDIProps;
+
+    protected static Logger LOG = LoggerFactory.getLogger(JNDIInit.class);
+    InitialContext ctx;
     {
-        props = new Properties();
         try {
-            props.load(new FileInputStream("resources/jndi.properties"));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        try {
-            ctx = new InitialContext(props);
+            ctx = new InitialContext(JNDIProps);
         } catch (NamingException ex) {
             ex.printStackTrace();
         }

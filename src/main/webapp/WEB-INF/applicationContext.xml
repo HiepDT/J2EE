@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+    <context:property-placeholder location="classpath:/jndi.properties" />
+    <context:component-scan base-package="com.osc.mc.me" />
+
+
+    <bean id="JNDIProps" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:/jndi.properties"/>
+    </bean>
 
     <bean id="User" class="com.osc.mc.me.model.User" init-method="init"/>
 
-    <bean id="userType" class="com.osc.mc.me.model.UserTypes" >
+    <bean id="userType" class="com.osc.mc.me.model.UserTypes">
         <property name="userTypes">
             <list>
                 <value>Admin</value>
