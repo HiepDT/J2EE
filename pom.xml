@@ -15,6 +15,21 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>google-drive-releases</id>
+            <url>https://drive.google.com/folderview?id=0B-lmf4kAX3xCYUpfTEhLbFVGLVE&amp;usp=sharing</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+        <!--<repository>-->
+            <!--<id>google-drive-snapshots</id>-->
+            <!--<url>file://${user.home}/viivii-google-drive/mvn-snapshots</url>-->
+            <!--<releases><enabled>false</enabled></releases>-->
+            <!--<snapshots><enabled>true</enabled></snapshots>-->
+        <!--</repository>-->
+    </repositories>
+
     <dependencies>
 
         <dependency>
