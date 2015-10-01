@@ -25,7 +25,7 @@ public class User {
 
     @PostPersist
     void onPostPersist() {
-        this.company+= " (postPersist)not very smart.";
+        this.company += " (postPersist)not very smart.";
     }
 
     public User(String username, String password) {
@@ -79,6 +79,6 @@ public class User {
 
     @PrePersist
     void onPrePersist() {
-        this.description+="onPrePersist: from within the entity\n";
+        this.description += "onPrePersist: from within the entity\n";
     }
 }

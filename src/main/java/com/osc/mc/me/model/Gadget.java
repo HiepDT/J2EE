@@ -11,6 +11,6 @@ public class Gadget {
 
     @Override
     public String toString() {
-        return "Autowired shit. It says: "+description;
+        return "Autowired shit. It says: " + description;
     }
 }

@@ -16,6 +16,7 @@ public class JNDIInit {
 
     protected static Logger LOG = LoggerFactory.getLogger(JNDIInit.class);
     InitialContext ctx;
+
     {
         try {
             ctx = new InitialContext(JNDIProps);
