@@ -11,11 +11,11 @@
     <distributionManagement>
         <repository>
             <id>google-drive-repository</id>
-            <url>file://${user.home}/googlerepo/repository/mvn-releases</url>
+            <url>file://${basedir}/repository/mvn-releases</url>
         </repository>
         <snapshotRepository>
             <id>google-drive-snapshot</id>
-            <url>file://${user.home}/googlerepo/repository/mvn-snapshots</url>
+            <url>file://${basedir}/repository/mvn-snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
