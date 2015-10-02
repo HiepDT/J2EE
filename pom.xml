@@ -18,7 +18,7 @@
     <repositories>
         <repository>
             <id>google-drive-releases</id>
-            <url>https://drive.google.com/folderview?id=0B-lmf4kAX3xCT0FOX3lJeFE2WVU&amp;usp=sharing</url>
+            <url>https://drive.google.com/folderview?id=0B-lmf4kAX3xCT0FOX3lJeFE2WVU</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
