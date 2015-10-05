@@ -90,7 +90,8 @@ public class Register extends JNDIInit {
         User user = (User) context.getBean("User");
         user.setUsername(username);
         user.setPassword(password);
-        em.persist(user);
+        em.merge(user);
         em.getTransaction().commit();
+        em.close();
     }
 }

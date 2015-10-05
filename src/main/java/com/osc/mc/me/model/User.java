@@ -8,7 +8,7 @@ import javax.persistence.*;
 @EntityListeners(Listener.class)
 @Table(name = "user")
 public class User {
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Id
     private String id;
     private String username;
